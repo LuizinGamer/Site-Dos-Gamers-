@@ -81,5 +81,43 @@ $('#saveReview').addEventListener('click',()=>{reviews.unshift({game:$('#gameNam
 $('#sendComment').addEventListener('click',()=>{const text=$('#commentText').value.trim();if(!text){alert('Escreva um comentário antes de publicar.');return;}comments.unshift({name:$('#commentName').value.trim()||'Visitante',text});$('#commentsList').innerHTML=comments.map(c=>`<div class="comment"><strong>${safeText(c.name)}</strong><p>${safeText(c.text)}</p></div>`).join('');$('#commentText').value='';});
 $('#addVideo').addEventListener('click',()=>{const id=$('#videoId').value.trim();if(!/^[a-zA-Z0-9_-]{11}$/.test(id)){alert('Digite um ID válido de vídeo do YouTube (11 caracteres).');return;}$('#videoResult').innerHTML=`<div style="margin-top:15px;aspect-ratio:16/9"><iframe title="Vídeo do YouTube" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}" allowfullscreen loading="lazy" style="border:0;border-radius:9px"></iframe></div>`;});
 </script>
-</body>
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const SUPABASE_URL = 'COLE_SUA_API_URL_AQUI';
+const SUPABASE_KEY = 'COLE_SUA_PUBLISHABLE_KEY_AQUI';
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+
+async function carregarNoticias() {
+  const { data, error } = await supabase
+    .from('noticias')
+    .select('*')
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    console.error('Erro ao carregar notícias:', error);
+    return;
+  }
+
+  const area = document.getElementById('noticias');
+  if (!area) return;
+
+  area.replaceChildren();
+
+  data.forEach(noticia => {
+    const artigo = document.createElement('article');
+    const titulo = document.createElement('h3');
+    const texto = document.createElement('p');
+
+    titulo.textContent = noticia.titulo;
+    texto.textContent = noticia.texto;
+
+    artigo.append(titulo, texto);
+    area.append(artigo);
+  });
+}
+
+carregarNoticias();
+</script></body>
 </html>
