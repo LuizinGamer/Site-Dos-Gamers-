@@ -1,36 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gamer's Site Admin</title>
-<style>
-body{background:#111;color:white;font-family:Arial;padding:20px}
-h1{color:#ff3030}
-input,textarea,button{width:100%;padding:14px;margin:8px 0;box-sizing:border-box}
-button{background:#e32626;color:white;border:0;font-weight:bold;border-radius:8px}
-</style>
-</head>
-<body>
-<h1>GAMER'S SITE - ADMIN</h1>
-<h2>Adicionar notícia</h2>
-<input id="titulo" placeholder="Título da notícia">
-<textarea id="texto" placeholder="Escreva a notícia"></textarea>
-<button id="publicar">PUBLICAR</button>
-<p id="resultado"></p>
-
-<script>
-document.getElementById("publicar").addEventListener("click", function() {
- const titulo = document.getElementById("titulo").value.trim();
- const texto = document.getElementById("texto").value.trim();
-
- if (!titulo || !texto) {
-   document.getElementById("resultado").textContent = "Preencha os dois campos!";
-   return;
- }
-
- document.getElementById("resultado").textContent = "Notícia preparada: " + titulo;
-});
-</script>
+<html>
+<body style="background:#111;color:white;text-align:center;font-family:Arial">
+<h1>GAMER'S SITE</h1>
+<button onclick="alert('O BOTÃO ESTÁ FUNCIONANDO!')">
+TESTAR BOTÃO
+</button>
 </body>
 </html>
