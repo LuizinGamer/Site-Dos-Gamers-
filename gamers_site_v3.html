@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Gamer's Site: notícias, vídeos, lançamentos e avaliações do universo gamer.">
+<title>Gamer's Site — Universo Gamer</title>
+<style>
+:root{--bg:#090a0e;--panel:#12141b;--panel2:#191c25;--red:#ed2336;--red2:#a90f24;--text:#f5f5f7;--muted:#a4a7b1;--line:#292c36}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}
+header{position:sticky;top:0;z-index:20;background:#0c0d12ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:15px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:950;letter-spacing:-1px;font-size:23px}.brand span{color:var(--red)}nav{display:flex;gap:22px;flex-wrap:wrap}nav a{font-size:13px;color:#d5d5db}nav a:hover{color:#ff5261}.menu{display:none;background:none;color:white;border:1px solid var(--line);padding:8px 11px;border-radius:8px}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}.hero{padding:65px 0 48px;background:radial-gradient(ellipse at 80% 15%,#7c1224 0,transparent 38%),linear-gradient(115deg,#171016,#090a0e 65%)}.eyebrow{color:#ff6976;text-transform:uppercase;font-weight:800;font-size:11px;letter-spacing:2px}.hero h1{font-size:clamp(36px,6vw,65px);line-height:1.02;max-width:720px;margin:15px 0}.hero p{max-width:580px;color:#c3c4cb;line-height:1.7}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}.btn{display:inline-block;border:0;border-radius:9px;padding:12px 18px;font-weight:800;cursor:pointer;background:var(--red);color:white}.btn:hover{background:#ff4052}.btn.secondary{background:#22242d;border:1px solid #383b46}.section{padding:38px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:19px}.section h2{font-size:24px;margin:0}.section-head p{color:var(--muted);font-size:13px;margin:7px 0 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#6c2731}.art{height:145px;background:linear-gradient(135deg,#3a1019,#171922);display:flex;align-items:center;justify-content:center;font-size:42px;font-weight:950;color:#ffffff20;letter-spacing:2px}.card-body{padding:17px}.tag{display:inline-block;background:#35131a;color:#ff7a85;border-radius:5px;padding:5px 8px;font-size:10px;font-weight:900;text-transform:uppercase}.card h3{margin:11px 0 8px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}.muted{color:var(--muted)}.games{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.game{background:var(--panel2);border:1px solid var(--line);padding:19px;border-radius:12px;font-weight:800}.game small{display:block;color:var(--muted);font-weight:500;margin-top:6px}.game:hover{border-color:var(--red)}.split{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}.video-placeholder{min-height:205px;background:linear-gradient(135deg,#291018,#11131a);border-radius:10px;display:grid;place-items:center;text-align:center;color:#ff8b95;padding:20px}.video-placeholder b{font-size:42px}.list{display:grid;gap:10px}.release{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:12px 0;font-size:13px}.release:last-child{border:0}.release span:last-child{color:#ff7b86;text-align:right}.formrow{display:grid;gap:8px;margin:12px 0}input,textarea,select{width:100%;background:#0c0e14;border:1px solid #343744;color:white;padding:11px;border-radius:8px}textarea{min-height:90px;resize:vertical}.stars{display:flex;gap:5px}.star{background:none;border:0;color:#656875;font-size:25px;cursor:pointer;padding:0}.star.active{color:#ffbd45}.notice{font-size:12px;color:var(--muted);line-height:1.5}.comment{border-top:1px solid var(--line);padding:12px 0}.comment strong{font-size:13px}.comment p{margin:5px 0;color:#c2c4cc;font-size:13px}.empty{padding:18px;text-align:center;color:var(--muted);background:#0d0f15;border-radius:9px;font-size:13px}footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:12px;margin-top:25px}.footerrow{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:760px){.menu{display:block}nav{display:none;position:absolute;top:60px;left:0;right:0;background:#0c0d12;padding:18px 22px;border-bottom:1px solid var(--line)}nav.open{display:grid;grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr 1fr}.games{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.hero{padding:48px 0 35px}}
+@media(max-width:470px){.grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.brand{font-size:19px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<a class="brand" href="#inicio">GAMER'S <span>SITE</span></a>
+<button class="menu" id="menuBtn" aria-label="Abrir menu">☰</button>
+<nav id="nav"><a href="#inicio">Início</a><a href="#noticias">Notícias</a><a href="#jogos">Jogos</a><a href="#videos">Vídeos</a><a href="#lancamentos">Lançamentos</a><a href="#avaliacoes">Avaliações</a></nav>
+</div></header>
+<main>
+<section class="hero" id="inicio"><div class="wrap">
+<div class="eyebrow">Seu portal de games</div><h1>O universo gamer<br><span style="color:var(--red)">em um só lugar.</span></h1>
+<p>Notícias, vídeos, lançamentos, curiosidades e opiniões sobre os jogos que movimentam o mundo.</p>
+<div class="actions"><a class="btn" href="#noticias">Ver novidades</a><a class="btn secondary" href="#jogos">Explorar jogos</a></div>
+</div></section>
+<section class="section wrap" id="noticias"><div class="section-head"><div><h2>🔥 Últimas notícias</h2><p>Espaço preparado para receber notícias de fontes conectadas.</p></div><span class="tag">Atualizações</span></div>
+<div class="grid" id="newsGrid">
+<article class="card"><div class="art">GTA VI</div><div class="card-body"><span class="tag">GTA</span><h3>Novidades do universo Grand Theft Auto</h3><p>Conecte uma fonte RSS ou API para exibir notícias verificadas e atualizadas automaticamente.</p></div></article>
+<article class="card"><div class="art">ROBLOX</div><div class="card-body"><span class="tag">Roblox</span><h3>Atualizações e experiências</h3><p>Uma área dedicada a novidades, experiências e conteúdos da comunidade Roblox.</p></div></article>
+<article class="card"><div class="art">PS5</div><div class="card-body"><span class="tag">PlayStation</span><h3>O que acontece no PlayStation</h3><p>Use este espaço para notícias oficiais, anúncios e novidades do console.</p></div></article>
+</div><p class="notice" style="margin-top:12px">Aviso: estas são chamadas demonstrativas, não notícias atuais. Para automação real, configure uma API/RSS no servidor.</p>
+</section>
+<section class="section wrap" id="jogos"><div class="section-head"><div><h2>🎮 Explore os jogos</h2><p>Escolha uma categoria para descobrir conteúdos.</p></div></div>
+<div class="games">
+<a class="game" href="#noticias">GTA 6<small>Notícias e novidades</small></a>
+<a class="game" href="#noticias">GTA San Andreas<small>Clássicos e curiosidades</small></a>
+<a class="game" href="#noticias">Roblox<small>Experiências e atualizações</small></a>
+<a class="game" href="#noticias">Fortnite<small>Temporadas e eventos</small></a>
+<a class="game" href="#noticias">PlayStation<small>Console e exclusivos</small></a>
+<a class="game" href="#noticias">GTA 5<small>Guias e conteúdo</small></a>
+<a class="game" href="#noticias">Minecraft<small>Construções e novidades</small></a>
+<a class="game" href="#noticias">Outros jogos<small>Descubra mais games</small></a>
+</div></section>
+<section class="section wrap" id="videos"><div class="section-head"><div><h2>▶ Vídeos e gameplay</h2><p>Adicione vídeos do seu canal ou de criadores autorizados.</p></div></div>
+<div class="split"><div class="video-placeholder"><div><b>▶</b><p>Vídeos do YouTube</p><span class="notice">Cole um ID de vídeo abaixo para incorporar.</span></div></div>
+<div class="panel"><h3>Adicionar vídeo</h3><div class="formrow"><label for="videoId">ID do vídeo do YouTube</label><input id="videoId" placeholder="Ex.: dQw4w9WgXcQ"></div><button class="btn" id="addVideo">Carregar vídeo</button><p class="notice">Use vídeos públicos e respeite os direitos dos criadores.</p><div id="videoResult"></div></div></div>
+</section>
+<section class="section wrap" id="lancamentos"><div class="section-head"><div><h2>📅 Área de lançamentos</h2><p>Calendário demonstrativo para organizar próximos jogos.</p></div></div>
+<div class="panel list">
+<div class="release"><strong>Próximos lançamentos</strong><span>Consulte fontes oficiais</span></div>
+<div class="release"><span>Datas ainda não cadastradas</span><span>—</span></div>
+</div><p class="notice">As datas devem ser cadastradas a partir de anúncios oficiais; não há calendário ao vivo conectado nesta versão.</p>
+</section>
+<section class="section wrap" id="avaliacoes"><div class="section-head"><div><h2>⭐ Avaliações da comunidade</h2><p>Deixe uma avaliação local neste navegador.</p></div></div>
+<div class="split"><div class="panel"><h3>Avalie um jogo</h3>
+<div class="formrow"><label for="gameName">Jogo</label><select id="gameName"><option>GTA 6</option><option>GTA San Andreas</option><option>Roblox</option><option>Fortnite</option><option>PlayStation</option><option>GTA 5</option><option>Minecraft</option><option>Outro</option></select></div>
+<div class="formrow"><label>Sua nota</label><div class="stars" id="stars" aria-label="Escolher nota"><button class="star active" data-n="1">★</button><button class="star active" data-n="2">★</button><button class="star active" data-n="3">★</button><button class="star active" data-n="4">★</button><button class="star active" data-n="5">★</button></div></div>
+<div class="formrow"><label for="reviewName">Seu apelido (opcional)</label><input id="reviewName" maxlength="30" placeholder="Gamer123"></div>
+<button class="btn" id="saveReview">Enviar avaliação</button></div>
+<div class="panel"><h3>Avaliações recentes</h3><div id="reviews" class="empty">Nenhuma avaliação neste navegador ainda.</div><p class="notice">As avaliações ficam salvas apenas neste dispositivo. Para compartilhá-las entre visitantes, será necessário um banco de dados e moderação.</p></div></div>
+</section>
+<section class="section wrap" id="comentarios"><div class="section-head"><div><h2>💬 Comentários</h2><p>Compartilhe sua opinião com respeito.</p></div></div>
+<div class="panel"><div class="formrow"><label for="commentName">Apelido</label><input id="commentName" maxlength="30" placeholder="Seu apelido"></div><div class="formrow"><label for="commentText">Comentário</label><textarea id="commentText" maxlength="500" placeholder="O que você está achando do mundo gamer?"></textarea></div><button class="btn" id="sendComment">Publicar comentário</button><p class="notice">Demonstração local: comentários não são enviados para um servidor nem ficam visíveis para outros visitantes.</p><div id="commentsList" style="margin-top:18px"></div></div>
+</section>
+</main>
+<footer><div class="wrap footerrow"><span><strong>GAMER'S SITE</strong> — Seu universo gamer.</span><span>Projeto independente. Marcas e jogos pertencem aos respectivos titulares.</span><span>© <span id="year"></span> Gamer's Site</span></div></footer>
+<script>
+const $=s=>document.querySelector(s);
+$('#year').textContent=new Date().getFullYear();
+$('#menuBtn').addEventListener('click',()=>$('#nav').classList.toggle('open'));
+$('#nav').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>$('#nav').classList.remove('open')));
+let rating=5;
+$('#stars').addEventListener('click',e=>{const b=e.target.closest('button[data-n]');if(!b)return;rating=Number(b.dataset.n);$('#stars').querySelectorAll('.star').forEach(s=>s.classList.toggle('active',Number(s.dataset.n)<=rating));});
+function safeText(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+let reviews=[];let comments=[];
+$('#saveReview').addEventListener('click',()=>{reviews.unshift({game:$('#gameName').value,rating,name:$('#reviewName').value.trim()||'Visitante'});$('#reviews').className='';$('#reviews').innerHTML=reviews.map(r=>`<div class="comment"><strong>${safeText(r.game)} — ${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</strong><p>Por ${safeText(r.name)}</p></div>`).join('');});
+$('#sendComment').addEventListener('click',()=>{const text=$('#commentText').value.trim();if(!text){alert('Escreva um comentário antes de publicar.');return;}comments.unshift({name:$('#commentName').value.trim()||'Visitante',text});$('#commentsList').innerHTML=comments.map(c=>`<div class="comment"><strong>${safeText(c.name)}</strong><p>${safeText(c.text)}</p></div>`).join('');$('#commentText').value='';});
+$('#addVideo').addEventListener('click',()=>{const id=$('#videoId').value.trim();if(!/^[a-zA-Z0-9_-]{11}$/.test(id)){alert('Digite um ID válido de vídeo do YouTube (11 caracteres).');return;}$('#videoResult').innerHTML=`<div style="margin-top:15px;aspect-ratio:16/9"><iframe title="Vídeo do YouTube" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}" allowfullscreen loading="lazy" style="border:0;border-radius:9px"></iframe></div>`;});
+</script>
+</body>
+</html>
