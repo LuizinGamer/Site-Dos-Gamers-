@@ -1,1 +1,31 @@
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin - Gamer's Site</title>
+<style>
+body{background:#111;color:white;font-family:Arial;padding:20px}
+h1{color:#ff3030}
+input,textarea,button{width:100%;padding:12px;margin:8px 0;box-sizing:border-box}
+button{background:#e32626;color:white;border:0;font-weight:bold}
+</style>
+</head>
+<body>
+<h1>GAMER'S SITE - ADMIN</h1>
+<h2>Adicionar notícia</h2>
+<input id="titulo" placeholder="Título da notícia">
+<textarea id="texto" placeholder="Escreva a notícia"></textarea>
+<button onclick="publicar()">Publicar</button>
+<p id="resultado"></p>
+<script>
+function publicar(){
+const titulo=document.getElementById('titulo').value;
+const texto=document.getElementById('texto').value;
+if(!titulo||!texto){alert('Preencha os campos!');return;}
+document.getElementById('resultado').innerText=
+'Notícia preparada: '+titulo;
+}
+</script>
+</body>
+</html>
